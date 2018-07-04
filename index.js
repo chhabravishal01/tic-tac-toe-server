@@ -172,6 +172,10 @@ app.get("/users", function(req, res) {
   res.status(200).send(users);
 });
 
+app.get("/port", function(req, res) {
+  res.status(200).send("Env port = " + process.env.PORT);
+});
+
 server.listen(process.env.PORT || 5000, () => {
   // console.log("Listening on port " + process.env.PORT || 5000);
 });
