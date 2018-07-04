@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "tic-tac-toe game",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "vishal",
   "license": "ISC",
   "dependencies": {
