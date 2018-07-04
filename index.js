@@ -169,13 +169,19 @@ app.post("/login", (req, res) => {
 // For checking current data
 
 app.get("/users", function(req, res) {
-  res.status(200).send(users);
+  let userList = [];
+  users.forEach(user => {
+    userList.push(user.userName);
+  });
+
+  data = { Users: userList, Total: userList.length };
+  res.status(200).send(data);
 });
 
-app.get("/port", function(req, res) {
-  res.status(200).send("Env port = " + process.env.PORT);
-});
+// app.get("/users", function(req, res) {
+//   res.status(200).send(users);
+// });
 
-server.listen(process.env.PORT || 5000, () => {
+server.listen(process.env.PORT || 8000, () => {
   // console.log("Listening on port " + process.env.PORT || 5000);
 });
